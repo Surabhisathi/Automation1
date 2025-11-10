@@ -19,16 +19,25 @@ public class ExcelUtility {
 			
 			public static String getStringData(int a,int b,String sheet) throws IOException  
 			{
-				f=new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\GroceryApplication\\src\\test\\resources\\testdata Grocery Login.xlsx");
+				f=new FileInputStream("C:\\Users\\hp\\git\\Automation1\\GroceryApplication\\src\\test\\resources\\testdata Grocery Login.xlsx\\");
 				wb= new XSSFWorkbook(f);
 				sh=wb.getSheet(sheet);
 				XSSFRow r =sh.getRow(a);
 				XSSFCell c = r.getCell(b);
 				return c.getStringCellValue();
 			}
+			 public static String getStringDetails(int a,int b,String sheet) throws IOException
+				{
+					f=new FileInputStream("C:\\Users\\hp\\git\\Automation1\\GroceryApplication\\src\\test\\resources\\testdata Grocery Login.xlsx\\");
+					wb=new XSSFWorkbook(f);
+					sh=wb.getSheet(sheet);
+					XSSFRow r=sh.getRow(a);
+					XSSFCell c=r.getCell(b);
+					return c.getStringCellValue();
+				}
 			public static String getIntegerData(int a,int b,String sheet) throws IOException
 			{
-				f=new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\GroceryApplication\\src\\test\\resources\\testdata Grocery Login.xlsx");
+				f=new FileInputStream("C:\\Users\\hp\\git\\Automation1\\GroceryApplication\\src\\test\\resources\\testdata Grocery Login.xlsx\\");
 				wb=new XSSFWorkbook(f);
 				sh=wb.getSheet(sheet);
 				//get the row at index a using getRow() method
@@ -42,7 +51,7 @@ public class ExcelUtility {
 			}
 			public static String getFloatData(int a,int b,String sheet) throws IOException
 			{
-				f=new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\GroceryApplication\\src\\test\\resources\\testdata Grocery Login.xlsx");
+				f=new FileInputStream("C:\\Users\\hp\\git\\Automation1\\GroceryApplication\\src\\test\\resources\\testdata Grocery Login.xlsx\\");
 				wb=new XSSFWorkbook(f);
 				sh=wb.getSheet(sheet);
 				XSSFRow r=sh.getRow(a);

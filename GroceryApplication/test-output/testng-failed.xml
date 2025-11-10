@@ -5,8 +5,8 @@
     <classes>
       <class name="testscript.LoginTest">
         <methods>
+          <include name="verifyUserWithInvalidUsernameAndValidPassword"/>
           <include name="closeAndQuit"/>
-          <include name="verifyUserWithValidCredentials"/>
           <include name="intializeBrowser"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
