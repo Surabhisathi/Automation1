@@ -21,8 +21,8 @@ public class HomeTest extends Base
 		loginpage.enterPasswordOnPasswordField(password);
 		loginpage.clickSignIninButton();
 		HomePage homepage =new HomePage(driver);
-		homepage.clickTheAdminIcon();
-		homepage.clickTheLogoutOption();
-		
+		//homepage.clickTheAdminIcon();
+		//homepage.clickTheLogoutOption();
+		homepage.clickAdminUserTile();
 	}
 }

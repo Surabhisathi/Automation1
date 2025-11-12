@@ -14,16 +14,20 @@ public class HomePage
 		PageFactory.initElements(driver, this);
 		
 	}
-	@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminicon;
-	@FindBy(xpath="//i[@class='ace-icon fa fa-power-off']") WebElement logoutoption;
-	
-	public void clickTheAdminIcon()
+	//@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminicon;
+	//@FindBy(xpath="//i[@class='ace-icon fa fa-power-off']") WebElement logoutoption;
+	@FindBy(linkText="More info") WebElement adminusertile;
+	/*public void clickTheAdminIcon()
 	{
 		adminicon.click();
 	}
 	public void clickTheLogoutOption()
 	{
 		logoutoption.click();
+	}*/
+	public void clickAdminUserTile()
+	{
+		adminusertile.click();
 	}
 
 }
