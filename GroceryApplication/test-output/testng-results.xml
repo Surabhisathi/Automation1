@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-11T19:00:25 IST" name="Default suite" finished-at="2025-11-11T19:00:56 IST" duration-ms="30978">
+  <suite started-at="2025-11-13T18:43:06 IST" name="Default suite" finished-at="2025-11-13T18:43:11 IST" duration-ms="4685">
     <groups>
     </groups>
-    <test started-at="2025-11-11T19:00:25 IST" name="Default test" finished-at="2025-11-11T19:00:56 IST" duration-ms="30978">
-      <class name="testscript.AdminUserTest">
-        <test-method is-config="true" signature="intializeBrowser()[pri:0, instance:testscript.AdminUserTest@6f1de4c7]" started-at="2025-11-11T19:00:25 IST" name="intializeBrowser" finished-at="2025-11-11T19:00:31 IST" duration-ms="5572" status="PASS">
+    <test started-at="2025-11-13T18:43:06 IST" name="Default test" finished-at="2025-11-13T18:43:11 IST" duration-ms="4685">
+      <class name="testscript.LoginTest">
+        <test-method is-config="true" signature="intializeBrowser()[pri:0, instance:testscript.LoginTest@73a1e9a9]" started-at="2025-11-13T18:43:06 IST" name="intializeBrowser" finished-at="2025-11-13T18:43:09 IST" duration-ms="3192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intializeBrowser -->
-        <test-method signature="verifyWhetherUserIsAbleToResetNewlyAddedUsers()[pri:0, instance:testscript.AdminUserTest@6f1de4c7]" started-at="2025-11-11T19:00:31 IST" name="verifyWhetherUserIsAbleToResetNewlyAddedUsers" finished-at="2025-11-11T19:00:56 IST" duration-ms="25361" status="PASS">
+        <test-method signature="verifyUserWithValidCredentials()[pri:1, instance:testscript.LoginTest@73a1e9a9]" started-at="2025-11-13T18:43:09 IST" name="verifyUserWithValidCredentials" description="verifying successfull login with valid credentials" finished-at="2025-11-13T18:43:11 IST" duration-ms="1445" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyWhetherUserIsAbleToResetNewlyAddedUsers -->
-        <test-method is-config="true" signature="closeAndQuit()[pri:0, instance:testscript.AdminUserTest@6f1de4c7]" started-at="2025-11-11T19:00:56 IST" name="closeAndQuit" finished-at="2025-11-11T19:00:56 IST" duration-ms="4" status="PASS">
+        </test-method> <!-- verifyUserWithValidCredentials -->
+        <test-method is-config="true" signature="closeAndQuit()[pri:0, instance:testscript.LoginTest@73a1e9a9]" started-at="2025-11-13T18:43:11 IST" name="closeAndQuit" finished-at="2025-11-13T18:43:11 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeAndQuit -->
-      </class> <!-- testscript.AdminUserTest -->
+      </class> <!-- testscript.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
