@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class HomeTest extends Base
 {
-	@Test
+	@Test(description="User can successfully logout")
 	public void verifyWhetherUserCanSuccessfullyLogout() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");
@@ -24,5 +24,6 @@ public class HomeTest extends Base
 		//homepage.clickTheAdminIcon();
 		//homepage.clickTheLogoutOption();
 		homepage.clickAdminUserTile();
+		homepage.clickManageNewsMoreInfo();
 	}
 }

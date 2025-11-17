@@ -17,6 +17,8 @@ public class LoginPage {
 	@FindBy(name="username") WebElement usernameField;
 	@FindBy(name="password") WebElement passwordField;
 	@FindBy(xpath="//button[text()=\"Sign In\"]") WebElement signinbutton;
+	@FindBy(xpath="//p[text()=\'Dashboard\']") WebElement dashboard;
+	@FindBy(xpath="//b[text()='7rmart supermarket']") WebElement title;
 	
 	public void enterUsernameOnUsernameField(String username) 
 	{
@@ -29,6 +31,14 @@ public class LoginPage {
 	public void clickSignIninButton() 
 	{
 		signinbutton.click();
+	}
+	public boolean dashboardDisplayed()
+	{
+		return dashboard.isDisplayed();
+	}
+	public String getPageTitle()
+	{
+		return title.getText();
 	}
 	
 }

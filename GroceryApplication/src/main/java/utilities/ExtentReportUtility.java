@@ -16,7 +16,7 @@ reporter.config().setReportName("7RMartSupermarketProject");
 extentReports.attachReporter(reporter); 
 
 extentReports.setSystemInfo("Organization", "Obsqura"); 
-extentReports.setSystemInfo("Name", " Sona"); // provides context of the report 
+extentReports.setSystemInfo("Name", " Surabhi"); // provides context of the report 
 return extentReports; 
 
 }
