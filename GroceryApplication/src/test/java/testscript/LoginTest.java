@@ -1,4 +1,4 @@
-package testscript;
+ package testscript;
 
 import java.io.IOException;
 
@@ -32,7 +32,6 @@ public class LoginTest extends Base
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
 		loginpage.clickSignIninButton();
-		
 		
 		String actual=loginpage.getPageTitle();
 		String expected="7rmart supermarket";

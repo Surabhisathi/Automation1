@@ -2,6 +2,7 @@ package testscript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
@@ -11,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class HomeTest extends Base
 {
-	@Test(description="User can successfully logout")
+	@Test(description="User can successfully logout",retryAnalyzer=retry.Retry.class)
 	public void verifyWhetherUserCanSuccessfullyLogout() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");
@@ -25,5 +26,8 @@ public class HomeTest extends Base
 		//homepage.clickTheLogoutOption();
 		homepage.clickAdminUserTile();
 		homepage.clickManageNewsMoreInfo();
+		
+		
+		
 	}
 }

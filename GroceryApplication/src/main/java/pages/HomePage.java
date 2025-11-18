@@ -18,6 +18,7 @@ public class HomePage
 	//@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminicon;
 	//@FindBy(xpath="//i[@class='ace-icon fa fa-power-off']") WebElement logoutoption;
 	@FindBy(linkText="More info") WebElement adminusertile;
+	@FindBy(xpath="//p[@class=\'login-box-msg\']") WebElement loginpagemessage;
 	/*public void clickTheAdminIcon()
 	{
 		adminicon.click();
@@ -33,5 +34,9 @@ public class HomePage
 	public void clickManageNewsMoreInfo()
 	{
 		manageNewsMoreInfo.click();
+	}
+	public String getLoginPagemessage()
+	{
+		return loginpagemessage.getText();
 	}
 }
