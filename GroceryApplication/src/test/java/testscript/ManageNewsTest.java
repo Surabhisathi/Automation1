@@ -2,9 +2,11 @@ package testscript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constants.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageNewsPage;
@@ -29,6 +31,9 @@ public class ManageNewsTest  extends Base
 		String news=ExcelUtility.getStringData(0, 0,"NewsPage");
 		managenewspage.enterTheNewsOnNewsField(news);
 		managenewspage.clickSaveButton();
+		
+		boolean isAlertDisplayed=managenewspage.alertIsDisplayed();
+		Assert.assertTrue(isAlertDisplayed,Constant.AddNewNewsErrorMessage);
 	}
 	@Test
 	public void verifyWhetherUserCanSearchNews() throws IOException
@@ -47,5 +52,8 @@ public class ManageNewsTest  extends Base
 		String news=ExcelUtility.getStringData(0, 0, "NewsPage");
 		managenewspage.enterTheNewsOnSerachField(news);
 		managenewspage.clickSearchButton();
+		
+		boolean isSearchbuttonDisplayed=managenewspage.isSearchedUserDisplayed();
+		Assert.assertTrue(isSearchbuttonDisplayed,Constant.SearchNewsErrorMesage);
 	}
 }

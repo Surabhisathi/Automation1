@@ -16,7 +16,7 @@ import utilities.ScreenshotUtility;
 
 public class Base {
 	public WebDriver driver;
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	@Parameters("browsers")
 	public void intializeBrowser(String browsers) throws Exception
 	{
@@ -41,7 +41,7 @@ public class Base {
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	
 		public void driverQuit(ITestResult iTestResult) throws IOException { 
 			  

@@ -3,9 +3,11 @@ package testscript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constants.Constant;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -26,6 +28,7 @@ public class AdminUserTest extends Base
 		HomePage homepage =new HomePage(driver);
 		homepage.clickAdminUserTile();
 		
+		
 		FakerUtility utility=new FakerUtility();
 		String adminusername=utility.createRandomUserName();
 		String adminpassword=utility.createRandomPassword();
@@ -35,6 +38,10 @@ public class AdminUserTest extends Base
 		adminuserpage.enterNewAdminUserPasswordInPasswordField(adminpassword);
 		adminuserpage.selectUserTypeONTypeField();
 		adminuserpage.clickSaveButton();
+		
+		boolean isAlertMessageDisplayed=adminuserpage.viewAlertMessage();
+		Assert.assertTrue(isAlertMessageDisplayed,Constant.UserIsAbleToAddNewUsersErrorMessage);
+		
 
 		}
 	@Test(description="User can successfully search newly added users")
@@ -57,9 +64,7 @@ public class AdminUserTest extends Base
 		adminuserpage.enterUserTypeInUserTypeField();
 		adminuserpage.clickOnSearchButton();
 		
-		
-		
-	}
+		}
 	@Test(description="User can successfully reset newly added users")
 	public void verifyWhetherUserIsAbleToResetNewlyAddedUsers() throws IOException
 	{
@@ -75,5 +80,7 @@ public class AdminUserTest extends Base
 		
 		AdminUserPage adminuserpage=new AdminUserPage(driver);
 		adminuserpage.clickOnResetOption();
+		boolean isResetOptionDisplayed=adminuserpage.isResetButtonDisplayed();
+		Assert.assertTrue(isResetOptionDisplayed,Constant.ResetNewlyAddedUsersErrorMessage);
 	}
 }
