@@ -3,6 +3,7 @@
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
@@ -52,11 +53,11 @@ public class LoginTest extends Base
 		Assert.assertEquals(actual, expected,Constant.InvalidPasswordUsernameErrorMessage);
 		
 	}
-	@Test(priority = 4, description="verifying user login with Invalid username and Invalid password",groups= {"Smoke"})
-	public void verifyUserWithInalidUsernameAndInvalidPassword() throws IOException
+	@Test(priority = 4, description="verifying user login with Invalid username and Invalid password",groups= {"Smoke"},dataProvider="loginProvider")
+	public void verifyUserWithInalidUsernameAndInvalidPassword(String username,String password) throws IOException
 	{
-		String username=ExcelUtility.getStringData(3, 0, "LoginPage");
-		String password=ExcelUtility.getStringData(3, 1, "LoginPage");
+		//String username=ExcelUtility.getStringData(3, 0, "LoginPage");
+		//String password=ExcelUtility.getStringData(3, 1, "LoginPage");
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
@@ -66,5 +67,14 @@ public class LoginTest extends Base
 		String expected="7rmart supermarket";
 		Assert.assertEquals(actual, expected,Constant.InvalidCredentialErrorMessage);
 	}
+	@DataProvider(name = "loginProvider")
+	public Object[][] getDataFromDataProvider() throws IOException {
+
+		return new Object[][] { new Object[] { "admin", "admin22" }, new Object[] { "admin123", "123" },
+				// new Object[] {ExcelUtility.getStringData(3,
+				// 0,"Login"),ExcelUtility.getStringData(3,1 ,"Login")}
+		
+		};
+}
 }
 

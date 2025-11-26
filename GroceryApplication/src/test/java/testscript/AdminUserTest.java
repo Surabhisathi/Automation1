@@ -59,11 +59,13 @@ public class AdminUserTest extends Base
 		
 		AdminUserPage adminuserpage=new AdminUserPage(driver);
 		adminuserpage.clickSearchField();
-		String adminusername=ExcelUtility.getStringData(4, 0,"LoginPage");
+		String adminusername=ExcelUtility.getStringData(1, 0,"LoginPage");
 		adminuserpage.enterUsernameInUsernameField(adminusername);
 		adminuserpage.enterUserTypeInUserTypeField();
 		adminuserpage.clickOnSearchButton();
 		
+		boolean isUserFound  = adminuserpage.isSearchUserDisplayed();
+		Assert.assertTrue(isUserFound,Constant.SearchNewlyAddedUsersErrorMessage);
 		}
 	@Test(description="User can successfully reset newly added users")
 	public void verifyWhetherUserIsAbleToResetNewlyAddedUsers() throws IOException

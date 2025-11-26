@@ -25,7 +25,9 @@ public class AdminUserPage
 	@FindBy(id="ut") WebElement searchUserTypeField;
 	@FindBy(xpath="//button[@value='sr']") WebElement searchButton;
 	@FindBy(xpath="//a[@class=\'btn btn-rounded btn-warning\']") WebElement resetOption;
+	@FindBy(xpath="//a[@class='page-link']")WebElement usernameresult;
 	@FindBy(xpath="//div[@class=\"alert ]alert-success alert-dismissible\"") WebElement alertmessage;
+
 	
 	
 	//Add newUser
@@ -82,7 +84,10 @@ public class AdminUserPage
 	{
 		return alertmessage.isDisplayed();
 	}
-	
+	public boolean isSearchUserDisplayed()
+	{
+		return usernameresult.isDisplayed();
+	}
 	public boolean isResetButtonDisplayed() 
 	{
 		return resetOption.isDisplayed();
