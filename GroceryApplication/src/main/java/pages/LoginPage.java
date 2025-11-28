@@ -5,44 +5,55 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class LoginPage {
 	public WebDriver driver;
-	public LoginPage(WebDriver driver)
-	{
-		this.driver=driver;
+	WaitUtility waitutility=new WaitUtility();
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		
+
 	}
-	
-	@FindBy(name="username") WebElement usernameField;
-	@FindBy(name="password") WebElement passwordField;
-	@FindBy(xpath="//button[text()=\"Sign In\"]") WebElement signinbutton;
-	@FindBy(xpath="//p[text()=\'Dashboard\']") WebElement dashboard;
-	@FindBy(xpath="//b[text()='7rmart supermarket']") WebElement title;
-	@FindBy(xpath="//p[text()='Sign in to start your session']") WebElement signintitle;
-	
-	public void enterUsernameOnUsernameField(String username) 
-	{
+
+	@FindBy(name = "username")
+	WebElement usernameField;
+	@FindBy(name = "password")
+	WebElement passwordField;
+	@FindBy(xpath = "//button[text()=\"Sign In\"]")
+	WebElement signinbutton;
+	@FindBy(xpath = "//p[text()=\'Dashboard\']")
+	WebElement dashboard;
+	@FindBy(xpath = "//b[text()='7rmart supermarket']")
+	WebElement title;
+	@FindBy(xpath = "//p[text()='Sign in to start your session']")
+	WebElement signintitle;
+
+	public LoginPage enterUsernameOnUsernameField(String username) {
 		usernameField.sendKeys(username);
+		return this;
 	}
-	public void enterPasswordOnPasswordField(String password)
-	{
+
+	public LoginPage enterPasswordOnPasswordField(String password) {
 		passwordField.sendKeys(password);
-	} 
-	public void clickSignIninButton() 
-	{
-		signinbutton.click();
+		return this;
 	}
-	public boolean dashboardDisplayed()
-	{
+
+	public HomePage clickSignIninButton() {
+		waitutility.waitUntilElementToBeClickable(driver, signinbutton);
+		signinbutton.click();
+		return new HomePage(driver);
+	}
+
+	public boolean dashboardDisplayed() {
 		return dashboard.isDisplayed();
 	}
-	public String getPageTitle()
-	{
+
+	public String getPageTitle() {
 		return title.getText();
 	}
-	public String getSignInTitle() 
-	{
+
+	public String getSignInTitle() {
 		return signintitle.getText();
 	}
 }

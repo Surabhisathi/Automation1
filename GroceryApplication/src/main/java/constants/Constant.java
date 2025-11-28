@@ -13,5 +13,8 @@ public class Constant
 	public static final String ResetNewlyAddedUsersErrorMessage="user unable to reset the users information";
 	public static final String AddNewNewsErrorMessage="user not able to add new news";
 	public static final String SearchNewsErrorMesage="user not able to search the news";
-	
+	public static  final String DropDownValue="admin" ;
+	public static final String SearchDropdownValue="admin";
+	public static final String ConfigFile=System.getProperty("user.dir")+"\\src\\main\\resources\\config.properties";
+		
 }
